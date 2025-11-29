@@ -1,0 +1,20 @@
+# Virtual environment
+.venv/
+
+# Data
+data/
+*.zip
+*.csv
+*.txt
+*.npy
+
+# Model files
+models/
+*.pt
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
