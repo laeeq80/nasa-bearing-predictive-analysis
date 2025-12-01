@@ -1,0 +1,10 @@
+{
+  "n_files": 6323,
+  "n_scores": 6323,
+  "checkpoint": "D:\\UET\\PycharmProjects\\nasaBearningAnomalyDetection\\models\\ae_best.pt",
+  "csv": "D:\\UET\\PycharmProjects\\nasaBearningAnomalyDetection\\eval_results\\recon_errors.csv",
+  "plot": "D:\\UET\\PycharmProjects\\nasaBearningAnomalyDetection\\eval_results\\recon_error_plot.png",
+  "downsample": 16,
+  "mean": -0.002282771049067378,
+  "std": 0.02540113731241545
+}
