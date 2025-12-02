@@ -25,6 +25,7 @@ project/
 ├── requirements.txt
 └── README.md
 
+
 Raw data and large intermediate files are intentionally excluded via .gitignore.
 
 **Dataset**
@@ -135,5 +136,6 @@ This project is structured for clarity and reproducibility rather than maximum m
 Only the best model checkpoint is stored to keep the repository clean.
 
 The preprocessing pipeline is designed to handle tens of thousands of high-frequency files efficiently.
+
 
 If you want, I can also generate a concise “Project Summary” section suitable for your CV or RISE application, or review your GitHub repository before you make it public.
