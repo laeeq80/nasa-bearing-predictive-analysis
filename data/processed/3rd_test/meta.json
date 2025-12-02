@@ -1,0 +1,11 @@
+{
+  "source_path": "D:\\NASA\\3rd_test",
+  "n_files_found": 6323,
+  "signal_length": 20480,
+  "channel_index": 0,
+  "use_memmap": true,
+  "generated_at": "2025-11-30T15:44:39.923255Z",
+  "signals_memmap": "D:\\UET\\PycharmProjects\\nasaBearningAnomalyDetection\\data\\processed\\3rd_test\\signals_memmap.dat",
+  "n_processed": 6323,
+  "n_skipped": 0
+}
