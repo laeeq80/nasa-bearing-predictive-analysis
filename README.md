@@ -56,11 +56,11 @@ The project uses PyTorch (CPU or CUDA builds) together with NumPy, SciPy, Pandas
 
 `preprocess.py` converts raw ASCII vibration files into:
 
-`signals.npy` or `signals_memmap.dat`
+- `signals.npy` or `signals_memmap.dat`
 
-`features.csv` (per-file statistical features)
+- `features.csv` (per-file statistical features)
 
-`meta.json` (signal length, file count, etc.)
+- `meta.json` (signal length, file count, etc.)
 
 Example:
 ```
@@ -86,15 +86,15 @@ models/ae_best.pt
 ```
 The checkpoint contains:
 
-model weights
+- model weights
 
-optimizer state
+- optimizer state
 
-downsample factor
+- downsample factor
 
-training statistics (mean, std)
+- training statistics (mean, std)
 
-preprocessing metadata
+- preprocessing metadata
 
 **Step 3: Evaluation**
 
@@ -106,11 +106,11 @@ python src/evaluate.py --processed-root ./data/processed --test 3rd_test --model
 ```
 This produces:
 
-`recon_errors.csv`
+- `recon_errors.csv`
 
-`recon_error_plot.png`
+- `recon_error_plot.png`
 
-`summary.json`
+- `summary.json`
 
 The reconstruction error curve typically shows a clear rise corresponding to bearing degradation and eventual failure, validating the model's anomaly detection capability.
 
@@ -124,25 +124,25 @@ This behavior is consistent with expected degradation progression in the IMS Tes
 
 A `demo_notebook/demo.ipynb` notebook is included to visualize:
 
-raw and downsampled signals
+- raw and downsampled signals
 
-feature distributions
+- feature distributions
 
-the learned autoencoder architecture
+- the learned autoencoder architecture
 
-reconstruction-based anomaly trends
+- reconstruction-based anomaly trends
 
-failure region detection
+- failure region detection
 
 This notebook serves as a concise walk-through for reviewers or hiring committees evaluating the project.
 
 **Notes**
 
-This project is structured for clarity and reproducibility rather than maximum model accuracy.
+- This project is structured for clarity and reproducibility rather than maximum model accuracy.
 
-Only the best model checkpoint is stored to keep the repository clean.
+- Only the best model checkpoint is stored to keep the repository clean.
 
-The preprocessing pipeline is designed to handle tens of thousands of high-frequency files efficiently.
+- The preprocessing pipeline is designed to handle tens of thousands of high-frequency files efficiently.
 
 
 If you want, I can also generate a concise “Project Summary” section suitable for your CV or RISE application, or review your GitHub repository before you make it public.
