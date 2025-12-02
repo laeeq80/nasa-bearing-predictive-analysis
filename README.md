@@ -25,7 +25,7 @@ project/
 │
 ├── requirements.txt
 └── README.md
-
+```
 
 Raw data and large intermediate files are intentionally excluded via .gitignore.
 
@@ -36,49 +36,54 @@ Each test set contains thousands of high-frequency vibration recordings captured
 
 Expected directory structure under data/raw/:
 
+```
 data/raw/
     1st_test/
     2nd_test/
     3rd_test/
-
+```
 Each test folder contains thousands of ASCII vibration files.
 
 **Installation**
 
 Create and activate a virtual environment, then install dependencies:
-
+```
 pip install -r requirements.txt
-
+```
 The project uses PyTorch (CPU or CUDA builds) together with NumPy, SciPy, Pandas, and Matplotlib.
 
 **Step 1: Preprocessing**
 
-preprocess.py converts raw ASCII vibration files into:
+`preprocess.py` converts raw ASCII vibration files into:
 
-signals.npy or signals_memmap.dat
+`signals.npy` or `signals_memmap.dat`
 
-features.csv (per-file statistical features)
+`features.csv` (per-file statistical features)
 
-meta.json (signal length, file count, etc.)
+`meta.json` (signal length, file count, etc.)
 
 Example:
+```
 python src/preprocess.py --data-root ./data/raw --test test3 --use-memmap
-
+```
 Outputs appear under:
+```
 data/processed/3rd_test/
-
+```
 Memmap mode is recommended for large datasets.
 
 **Step 2: Model Training**
 
-model_train.py trains a compact 1D convolutional autoencoder on the downsampled, normalized signals. Only the best validation model is saved.
+`model_train.py` trains a compact 1D convolutional autoencoder on the downsampled, normalized signals. Only the best validation model is saved.
 
 Example:
+```
 python src/model_train.py --processed-root ./data/processed --test 3rd_test --use-memmap --epochs 30 --batch-size 64
-
+```
 This produces:
+```
 models/ae_best.pt
-
+```
 The checkpoint contains:
 
 model weights
@@ -93,18 +98,19 @@ preprocessing metadata
 
 **Step 3: Evaluation**
 
-evaluate.py loads the best checkpoint and computes reconstruction error for each sample in the dataset.
+`evaluate.py` loads the best checkpoint and computes reconstruction error for each sample in the dataset.
 
 Example:
+```
 python src/evaluate.py --processed-root ./data/processed --test 3rd_test --model-dir models --out-dir eval_results
-
+```
 This produces:
 
-recon_errors.csv
+`recon_errors.csv`
 
-recon_error_plot.png
+`recon_error_plot.png`
 
-summary.json
+`summary.json`
 
 The reconstruction error curve typically shows a clear rise corresponding to bearing degradation and eventual failure, validating the model's anomaly detection capability.
 
@@ -116,7 +122,7 @@ This behavior is consistent with expected degradation progression in the IMS Tes
 
 **Notebook Demonstration**
 
-A demo_notebook/demo.ipynb notebook is included to visualize:
+A `demo_notebook/demo.ipynb` notebook is included to visualize:
 
 raw and downsampled signals
 
