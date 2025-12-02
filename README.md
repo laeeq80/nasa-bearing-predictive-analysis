@@ -5,6 +5,7 @@ This repository implements an end-to-end anomaly detection pipeline for the NASA
 The solution uses a lightweight 1D convolutional autoencoder trained exclusively on healthy bearing signals. Reconstruction error is then used as an unsupervised anomaly score to detect early degradation and failure.
 
 **Repository Structure**
+```text
 project/
 │
 ├── src/
